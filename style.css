@@ -21,8 +21,9 @@ nav{
 
 nav > section {
     display: flex;
-    gap: 35px;
+    column-gap: 35px;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .lien {
@@ -104,12 +105,17 @@ aside {
 
 .categories {
     color: rgb(154, 140, 152);
+    flex-wrap: wrap;
 }
 
-@media screen and (min-width: 1050px){  
+@media screen and (min-width: 1050px) and (orientation:landscape){  
 
     nav > section :hover{
         text-decoration: underline;
+    }
+
+    .menu {
+        display: none;
     }
 
     .layoutPpal {
@@ -181,11 +187,56 @@ aside {
         margin-inline: 5%;
     }
 
-    /* responsive sur header au choix */
+    @media screen and (orientation:landscape){
+
+        .menu {
+            display: none;
+        }
+    }
+
+    @media screen and (orientation: portrait){
+
+        nav {
+            flex-direction: row;
+            padding-inline: 5%;
+        }
+
+        nav > section {
+            flex-direction: column;
+            column-gap: 0;
+            align-items: center;
+        }
+
+        nav > img {
+            height: 45px;
+        }
+
+        .lien {
+            font-size:medium;
+        }
+
+        .menu {
+            background-color: rgb(34, 34, 59);
+            background-image: url(assets/menu-burger.png);
+            background-size:cover;
+            height: 30px;
+            width: 30px;
+            border: none;
+        }
+
+        .autresPages {
+            position: absolute;
+            top: -100%;
+        }
+        .connexInscrip {
+            position: absolute;
+            top: -100%;
+        }
+
+        /* bonus : couche js + position absolute pour faire un menu burger */
+    }
 }
 
-/* @media screen and (orientation: portrait){
-    bonus : couche js + position absolute pour faire un menu burger
-} */
+
 
 /* bonus : containers queries : tweets sur 2 colonnes, la pp au dessus du texte sur une seule colonne côte à côte */
