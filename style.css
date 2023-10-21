@@ -1,0 +1,191 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h2 {
+    font-family: 'Mukta', sans-serif;
+    line-height: 90%;
+}
+
+nav{
+    background-color: rgb(34, 34, 59);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5% 7%;
+    border-bottom: 2px solid black;
+}
+
+nav > section {
+    display: flex;
+    gap: 35px;
+    flex-wrap: wrap;
+}
+
+.lien {
+    text-decoration: none;
+    color: rgb(242, 233, 228);
+    font-family: 'Mukta';
+    font-size:larger;
+}
+
+nav > img {
+    height: 70px;
+    border-radius: 50%;
+}
+
+.layoutPpal{
+    background-color: rgb(74, 78, 105);
+    display: grid;
+}
+
+main{
+    grid-area: main;
+    display: grid;
+    gap: 15px;
+    margin-top: 40px;
+}
+
+.pp {
+    height: 60px;
+    border-radius: 50%;
+    align-self: center;
+}
+
+.tweets {
+    background-color: aliceblue;
+    padding-bottom: 15px;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+
+.tete {
+    background-color: rgb(201, 173, 167);
+    padding-top: 20px;
+    padding-inline: 20px;
+    border-top-right-radius: 7.5px;
+    border-top-left-radius: 7.5px;
+    display: flex;
+    gap: 2%;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    align-items: center;
+}
+
+.titreAuteur {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.author {
+    font-size: small;
+    font-style: italic;
+}
+
+.message {
+    padding-inline: 20px;
+}
+
+aside {
+    height: fit-content;
+    line-height: 150%;
+}
+
+.titre-categories {
+    margin-bottom: 15px;
+    text-decoration: underline;
+    font-size: 30px;
+    color: rgb(201, 173, 167);
+}
+
+.categories {
+    color: rgb(154, 140, 152);
+}
+
+@media screen and (min-width: 1050px){  
+
+    nav > section :hover{
+        text-decoration: underline;
+    }
+
+    .layoutPpal {
+        grid-template-columns: 0.3fr 3fr 1.3fr;
+        grid-template-areas: "vide main aside";
+    }
+
+    main {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .main > :nth-child(3n){
+        grid-column: main;
+        grid-column: 1 / 3;
+    }
+
+    aside {
+        grid-column: aside;
+        margin: 15%;
+        position: sticky;
+        top: 10%;
+    }
+}
+
+@media screen and (max-width: 1050px){
+
+    nav{
+        flex-direction: column;
+        padding: 1% 2%;
+        gap: 10px;
+    }
+
+    nav > img{
+        order: -1;
+    }
+
+    .layoutPpal {
+        grid-template-rows: auto;
+        grid-template-areas: "aside"
+        "main";
+    }
+
+    .pp {
+        border-radius: 25%;
+    }
+
+    .author {
+        order:0;
+    }
+
+    .titreAuteur > h2 {
+        order : 1;
+    }
+
+    aside {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .categories {
+        width: 100%;
+        display: flex;
+        justify-content:space-around;
+    }
+
+    .tweets {
+        margin-inline: 5%;
+    }
+
+    /* responsive sur header au choix */
+}
+
+/* @media screen and (orientation: portrait){
+    bonus : couche js + position absolute pour faire un menu burger
+} */
+
+/* bonus : containers queries : tweets sur 2 colonnes, la pp au dessus du texte sur une seule colonne côte à côte */
