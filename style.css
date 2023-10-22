@@ -128,7 +128,7 @@ aside {
     }
 
     .main > :nth-child(3n){
-        grid-column: main;
+        /* grid-column: main; */
         grid-column: 1 / 3;
     }
 
@@ -232,8 +232,6 @@ aside {
             position: absolute;
             top: -100%;
         }
-
-        /* bonus : couche js + position absolute pour faire un menu burger */
     }
 }
 
